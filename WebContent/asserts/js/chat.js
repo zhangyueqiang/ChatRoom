@@ -172,6 +172,7 @@ function backupCurHistory(){
     var storedHis = findHistory(curHis);
     if (null == storedHis) {
         histories.push(curHis);
+        
     }else {
         histories.splice(histories.indexOf(storedHis), 1);
         histories.push(curHis);

@@ -16,15 +16,16 @@
 			<span class="register-title">
 				用户注册
 			</span>
-			<form method="post" onsubmit="return checkInput();" class="fm-register">
-				<div class="fm-group"><span class="input-info">用户名</span><input type="text" placeholder="请输入用户名" name="username" id="username" required onfocus="userRefocus(this)" onblur="invalideUser(this)" autocomplete="off"><a class="username-status status-indicator icon-yes"></a></div>
-				<div class="fm-group"><span class="input-info">昵称</span><input type="text" placeholder="请输入昵称" name="nickname" id="nickname" required onfocus="nicknameRefocus(this)" onblur="invalideNickname(this)" autocomplete="off"><a class="nickname-status status-indicator icon-yes"></a></div>
-				<div class="fm-group"><span class="input-info">密码</span><input type="password" id="password" name="password" placeholder="请输入密码" required onfocus="passwordRefocus(this)" onblur="invalidePassword(this)" autocomplete="off"><a class="password-status status-indicator icon-yes"></a></div>
-				<div class="operate-grid">
-					<input type="submit" id="register" value="立即注册" class="btn btn-primary" disabled="disabled" autocomplete="off">
-					<a class="notify">*请填写每一项</a>
-				</div>
-			</form>
+	 <form method="post" onsubmit="return onRegister()" class="fm-register">
+		<div class="fm-group"><span class="input-info">用户名</span><input type="text" placeholder="用户名" name="username" id="username" required="required" autocomplete="off"></div>
+		<div class="fm-group"><span class="input-info">昵称</span><input type="text" placeholder="昵称" name="nickname" id="nickname" required="required"  autocomplete="off"></div>
+		<div class="fm-group"><span class="input-info">密码</span><input type="password" id="password" name="password" placeholder="密码" required="required"  autocomplete="off"></div>
+		<div class="operate-grid">
+		<input type="submit" id="register" value="立即注册" class="btn btn-primary">
+		<a class="notify">*请填写每一项</a>
+		</div>
+	</form>
+			
 		</div>
 	</div>
 </body>

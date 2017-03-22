@@ -12,7 +12,7 @@ public class UserService {
 	private final String sql1="select * from user where username=?";
 	public boolean userExists(User user){
 		if (!db.openConnection()){
-			System.out.println("鏁版嵁搴撹繛鎺ユ睜鎵撳紑澶辫触");
+			System.out.println("数据库连接池打开失败");
 			return false;
 		}
 		try {
@@ -34,11 +34,11 @@ public class UserService {
 	private final String sql2="insert into user values(?,?,?)";
 		public boolean addUser(User user){		
 			if (userExists(user)==true){
-				System.out.println("鐢ㄦ埛宸插瓨鍦紝鐢ㄦ埛娣诲姞鍙戠敓閿欒");
+				System.out.println("用户已存在，用户添加发生错误");
 				return false;
 			}
 			if (!db.openConnection()){
-				System.out.println("鏁版嵁搴撹繛鎺ユ睜鎵撳紑澶辫触");
+				System.out.println("数据库连接池打开失败");
 				return false;
 			}
 			try {
@@ -51,10 +51,10 @@ public class UserService {
 				ps.setString(2, password);
 				ps.setString(3, nickname);
 				ps.executeUpdate();
-				System.out.println("娣诲姞鎴愬姛");
+				System.out.println("添加成功");
 				return true;
 			} catch (Exception e) {
-				System.out.println(" 娣诲姞澶辫触"+e.getMessage());
+				System.out.println(" 添加失败"+e.getMessage());
 				return false;
 			}finally {
 				db.closeConnection();
@@ -62,7 +62,7 @@ public class UserService {
 		}
 		public User queryUserWithName(String username){
 			if (!db.openConnection()){
-				System.out.println("鏁版嵁搴撹繛鎺ユ睜鎵撳紑澶辫触");
+				System.out.println("数据库连接池打开失败");
 				return null;
 			}
 			try {

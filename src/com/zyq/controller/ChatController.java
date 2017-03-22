@@ -48,7 +48,7 @@ public class ChatController {
 		connectedUsers.remove(this);
 		sendNotifyMessage();
 		System.out.println(user.getUsername() + "下线！");
-		// 下线后，应该发送通知
+			// 下线后，应该发送通知
 	}
 	@OnMessage
 	public void onMessage(String message, Session session){

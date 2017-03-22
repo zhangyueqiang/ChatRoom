@@ -24,7 +24,6 @@ public class LoginServlet extends JsonServlet {
 		String loginData = ReadFromStream(request);
 		try {
 			JSONObject loginUserJson = new JSONObject(loginData);
-			System.out.println("json信息"+loginUserJson);
 			User user = new User();
 			UserServiceImpl impl=new UserServiceImpl();
 			user.readFromJson(loginUserJson);
