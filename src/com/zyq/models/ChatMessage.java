@@ -1,15 +1,14 @@
 package com.zyq.models;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ChatMessage implements IJsonSeriserialize{
-	private String from;	//æ¶ˆæ¯å‘é€çš„ç”¨æˆ·
-	private String to;		//æ¶ˆæ¯æ¥å—çš„ç”¨æˆ·
-	private String messageContent;	//æ¶ˆæ¯å†…å®¹
+	private String from;	//ÏûÏ¢·¢ËÍµÄÓÃ»§
+	private String to;		//ÏûÏ¢½ÓÊÜµÄÓÃ»§
+	private String messageContent;	//ÏûÏ¢ÄÚÈİ
 	private String messageType;		
-	/*æ¶ˆæ¯ç±»å‹ï¼šChatMessage:èŠå¤©æ¶ˆæ¯ï¼›SystemNotify:ç³»ç»Ÿæ¶ˆæ¯*/
-	private String fromNick;	//æ¶ˆæ¯å‘é€ç”¨æˆ·çš„æ˜µç§°
+	/*ÏûÏ¢ÀàĞÍ£ºChatMessage:ÁÄÌìÏûÏ¢£»SystemNotify:ÏµÍ³ÏûÏ¢*/
+	private String fromNick;	//ÏûÏ¢·¢ËÍÓÃ»§µÄêÇ³Æ
 	public static final String FROM = "from";
 	public static final String TO = "to";
 	public static final String MESSSAGE_CONTENT = "messageContent";

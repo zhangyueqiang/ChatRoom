@@ -1,12 +1,12 @@
 package com.zyq.models;
 
-import org.json.JSONException;
+
 import org.json.JSONObject;
 
 public class User implements IJsonSeriserialize{
-	private String username;	//ç”¨æˆ·å
-	private String password;	//å¯†ç 
-	private String nickname;	//æ˜µç§°
+	private String username;	//ÓÃ»§Ãû
+	private String password;	//ÃÜÂë
+	private String nickname;	//êÇ³Æ
 	public static final String USERNAME = "username";
 	public static final String PASSWORD = "password";
 	public static final String NICKNAME = "nickname";

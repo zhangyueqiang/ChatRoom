@@ -23,11 +23,14 @@ import com.zyq.utils.ResponseInformation;
 @WebServlet("/userlist")
 public class UserListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
 		List<ChatController> usersOnline = ChatController.getConnectedUsers();
 		JSONArray allUsers = new JSONArray();
 		UserServiceImpl impl=new UserServiceImpl(); 
 		for (ChatController chatController : usersOnline) {
 			User user = impl.queryUserWithUserName(chatController.getUser().getUsername());
+			System.out.println("用户列表"+user);
 			if (null != user) {
 				user.setPassword(null);
 				allUsers.put(user.toJson());
@@ -37,7 +40,7 @@ public class UserListServlet extends HttpServlet {
 		try {
 			writer.println(allUsers.toString());
 		} catch (Exception e) {
-			writer.println(ResponseInformation.getErrorInformation("鐢ㄦ埛鍒楄〃鑾峰彇閿欒"));
+			writer.println(ResponseInformation.getErrorInformation("用户列表获取错误"));
 		}finally {
 			writer.close();
 		}

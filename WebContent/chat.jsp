@@ -19,7 +19,7 @@ if (null != sessionObj) {
 <link rel="stylesheet" type="text/css" href="asserts/css/chat.css">
 <script src="asserts/js/jquery-2.1.4.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-var loginedUsername = '<%=loginedUser.getUsername()%>';
+var loginedUsername = '<%=loginedUser.getUsername()%>'
 var loginedUsernick = '<%=loginedUser.getNickname()%>'
 </script>
 <script type="text/javascript" src="asserts/js/chat.js"></script>

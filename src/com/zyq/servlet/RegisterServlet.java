@@ -22,10 +22,12 @@ import com.zyq.utils.ResponseInformation;
 public class RegisterServlet extends JsonServlet {
 	public static final String LOGINED_USER_SESSION_ATTR = "logined_user";
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
 		PrintWriter writer = response.getWriter();
 		String postData = ReadFromStream(request);
 		if (postData==null) {
-			String responseStr = ResponseInformation.getErrorInformation("æ•°æ®è¯·æ±‚ä¸ºç©ºï¼");
+			String responseStr = ResponseInformation.getErrorInformation("Êı¾İÇëÇóÎª¿Õ£¡");
 			writer.println(responseStr);
 			writer.close();
 			return;
@@ -38,7 +40,7 @@ public class RegisterServlet extends JsonServlet {
 			try {
 				User checkedUser = impl.queryUserWithUserName(user.getUsername());
 				if (checkedUser!=null) {
-					writer.println(ResponseInformation.getErrorInformation("ç”¨æˆ·åå·²å­˜åœ¨"));
+					writer.println(ResponseInformation.getErrorInformation("ÓÃ»§ÃûÒÑ´æÔÚ"));
 					writer.close();
 					return;
 				}
@@ -51,13 +53,13 @@ public class RegisterServlet extends JsonServlet {
 				writer.close();
 				return;
 			}else {
-				writer.println(ResponseInformation.getErrorInformation("æœªçŸ¥çš„é”™è¯¯"));
+				writer.println(ResponseInformation.getErrorInformation("Î´ÖªµÄ´íÎó"));
 				writer.close();
 				return;
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
-			writer.println(ResponseInformation.getErrorInformation("ç³»ç»Ÿå¼‚å¸¸é”™è¯¯ï¼"+e.getMessage()));
+			writer.println(ResponseInformation.getErrorInformation("ÏµÍ³Òì³£´íÎó£¡"+e.getMessage()));
 			writer.close();
 		}
 	}

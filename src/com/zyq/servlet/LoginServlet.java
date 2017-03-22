@@ -21,6 +21,8 @@ import com.zyq.utils.ResponseInformation;
 public class LoginServlet extends JsonServlet {
 	public static final String LOGINED_USER_SESSION_ATTR = "logined_user";
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");
 		String loginData = ReadFromStream(request);
 		try {
 			JSONObject loginUserJson = new JSONObject(loginData);

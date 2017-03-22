@@ -149,11 +149,13 @@ function getOnlineUser(){
                        </li>';
            var htmls = [];
            var allUsers = data;
+           console.log('所有信息'+data);
            if (allUsers instanceof Array) {
                for (var i = 0; i < allUsers.length; i++) {
                    var user = allUsers[i];
                    var tempHtml = onlineUserTemplate.replace(/{{username}}/, user.username).replace(/{{nickname}}/, user.nickname);
                    htmls.push(tempHtml);
+                   console.log('单个用户：'+user);
                }
            }
            $('.users-list').html('');
