@@ -1,1 +1,3 @@
 # ChatRoom
+
+本章项目是基于websocket的java web项目，通过聊天室的案例，将websocket的技术的优势充分体现出来，前后端传值也用了AJAX的技术，通过比较会很明显发现websocket在通信技术上的创新性突破。
