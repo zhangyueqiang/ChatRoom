@@ -4,9 +4,9 @@ package com.zyq.models;
 import org.json.JSONObject;
 
 public class User implements IJsonSeriserialize{
-	private String username;	//ÓÃ»§Ãû
-	private String password;	//ÃÜÂë
-	private String nickname;	//êÇ³Æ
+	private String username;	//ç”¨æˆ·å
+	private String password;	//å¯†ç 
+	private String nickname;	//æ˜µç§°
 	public static final String USERNAME = "username";
 	public static final String PASSWORD = "password";
 	public static final String NICKNAME = "nickname";
