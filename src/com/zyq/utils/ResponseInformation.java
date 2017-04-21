@@ -28,7 +28,7 @@ public class ResponseInformation {
 	public static String getErrorInformation(Exception ex) {
 		JSONObject json = new JSONObject();
 		try {
-			json.put("status", "success");
+			json.put("status", "error");
 			json.put("reason", ex.getMessage());
 		} catch (Exception e) {
 			e.getSuppressed();
