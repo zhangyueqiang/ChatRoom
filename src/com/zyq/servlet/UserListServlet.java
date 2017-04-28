@@ -21,7 +21,7 @@ import com.zyq.utils.ResponseInformation;
  * Servlet implementation class UserListServlet
  */
 @WebServlet("/userlist")
-public class UserListServlet extends HttpServlet {
+public class UserListServlet extends JsonServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json;charset=utf-8");
 		response.setCharacterEncoding("UTF-8");
@@ -30,7 +30,7 @@ public class UserListServlet extends HttpServlet {
 		UserServiceImpl impl=new UserServiceImpl(); 
 		for (ChatController chatController : usersOnline) {
 			User user = impl.queryUserWithUserName(chatController.getUser().getUsername());
-			System.out.println("用户列表"+user);
+			System.out.println("鐢ㄦ埛鍒楄〃"+user);
 			if (null != user) {
 				user.setPassword(null);
 				allUsers.put(user.toJson());
@@ -40,7 +40,7 @@ public class UserListServlet extends HttpServlet {
 		try {
 			writer.println(allUsers.toString());
 		} catch (Exception e) {
-			writer.println(ResponseInformation.getErrorInformation("用户列表获取错误"));
+			writer.println(ResponseInformation.getErrorInformation("鐢ㄦ埛鍒楄〃鑾峰彇閿欒"));
 		}finally {
 			writer.close();
 		}
